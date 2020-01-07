@@ -16,7 +16,7 @@
 `sh holer-uninstall.sh`
 
 ## 注意事项
-目前仅支持**Linux系统**，请根据自己的平台架构，下载匹配的安装包，执行命令`uname -m`查看硬件架构。
+目前仅支持**Linux系统**，请根据自己的硬件架构，下载匹配的安装包，执行命令`uname -m`查看硬件架构。
 
-也可以直接下载安装包`holer-install.bin`，该安装包支持所有主流的Linux平台架构。
+也可以直接下载安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
 
