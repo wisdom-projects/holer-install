@@ -1,4 +1,4 @@
-# Holer安装
+# Holer Install
 
 ## 1. 安装holer
 
