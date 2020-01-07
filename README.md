@@ -4,7 +4,7 @@
 
 ### 1.1 软件安装包
 
-**holer-install.xxx**
+下载 **holer-install.xxx**
 
 [地址一](https://github.com/wisdom-projects/holer-install/releases)
 
