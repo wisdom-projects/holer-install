@@ -2,7 +2,7 @@
 
 ## 1. 安装holer
 
-安装包地址：
+### 1.1 软件安装包
 
 **holer-install.xxx**
 
@@ -10,10 +10,10 @@
 
 [地址二](https://pan.baidu.com/s/1APDAaaaQxTa71IR2hDjIaA#list/path=%2Fsharelink2808252679-1014620033513253%2Fholer%2Fholer-client%2Finstall&parentPath=%2Fsharelink2808252679-1014620033513253)
 
-使用方法：
+### 1.2 使用方法
 `sh holer-install.xxx -k HOLER_ACCESS_KEY -s HOLER_SERVER_HOST`
 
-使用示例：
+### 1.3 使用示例
 `sh holer-install.x86 -k a0b1c2d3e4f5g6h7i8j9k -s holer.org`
 
 ## 2. 卸载holer
