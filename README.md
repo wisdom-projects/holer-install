@@ -28,13 +28,13 @@
 查看holer：
 `service holer status`
 
-ARM Linux平台执行如下命令：
+ARM Linux 平台执行如下命令：
 
-`
-sh /usr/bin/holer start
-sh /usr/bin/holer stop
-sh /usr/bin/holer status
-`
+`sh /usr/bin/holer start`
+
+`sh /usr/bin/holer stop`
+
+`sh /usr/bin/holer status`
 
 ## 3. 卸载holer
 执行命令：
