@@ -25,5 +25,6 @@
 ## 3. 注意事项
 目前holer的安装与卸载仅支持**Linux系统**，使用前执行命令`uname -m`查看硬件架构，选择跟自己硬件架构匹配的安装包。
 
-也可以直接使用安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
+或者可以直接使用安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
 
+用户也可以根据偏好选择Java版本的安装包`holer-install.jre`，该安装包支持跨平台。
