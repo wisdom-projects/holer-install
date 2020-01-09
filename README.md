@@ -50,7 +50,7 @@
 
 Java版本的holer卸载脚本路径：
 
-`/opt/holer/holer-client/bin/holer-uninstall.sh`
+`sh /opt/holer/holer-client/bin/holer-uninstall.sh`
 
 ## 4. 注意事项
 目前holer的安装与卸载仅支持**Linux系统**，使用前执行命令`uname -m`查看硬件架构，选择跟自己硬件架构匹配的安装包。
