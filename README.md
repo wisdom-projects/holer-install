@@ -28,7 +28,7 @@
 查看holer：
 `service holer status`
 
-ARM Linux 平台执行如下命令：
+**ARM Linux平台**执行如下命令：
 
 `sh /usr/bin/holer start`
 
