@@ -18,14 +18,14 @@
 ### 1.3 使用示例
 `sh holer-install.x86 -k a0b1c2d3e4f5g6h7i8j9k -s holer.org`
 
-## 2. 启停holer服务
-启动holer服务：
+## 2. 启停holer
+启动holer：
 `service holer start`
 
-停止holer服务：
+停止holer：
 `service holer stop`
 
-查看holer服务：
+查看holer：
 `service holer status`
 
 ## 3. 卸载holer
