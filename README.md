@@ -20,7 +20,12 @@
 
 ## 2. 卸载holer
 执行命令：
+
 `sh holer-uninstall.sh`
+
+卸载Java版本的holer执行命令：
+
+`sh /opt/holer/holer-client/bin/holer-uninstall.sh`
 
 ## 3. 注意事项
 目前holer的安装与卸载仅支持**Linux系统**，使用前执行命令`uname -m`查看硬件架构，选择跟自己硬件架构匹配的安装包。
