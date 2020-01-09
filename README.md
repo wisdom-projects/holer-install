@@ -18,7 +18,17 @@
 ### 1.3 使用示例
 `sh holer-install.x86 -k a0b1c2d3e4f5g6h7i8j9k -s holer.org`
 
-## 2. 卸载holer
+## 2. 启停holer服务
+启动holer服务：
+`service holer start`
+
+停止holer服务：
+`service holer stop`
+
+查看holer服务：
+`service holer status`
+
+## 3. 卸载holer
 执行命令：
 
 `sh holer-uninstall.sh`
@@ -29,7 +39,7 @@ Java版本的holer卸载脚本路径：
 
 `/opt/holer/holer-client/bin/holer-uninstall.sh`
 
-## 3. 注意事项
+## 4. 注意事项
 目前holer的安装与卸载仅支持**Linux系统**，使用前执行命令`uname -m`查看硬件架构，选择跟自己硬件架构匹配的安装包。
 
 或者可以直接使用安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
