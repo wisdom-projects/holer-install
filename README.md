@@ -22,6 +22,9 @@
 启动holer：
 `service holer start`
 
+重启holer：
+`service holer restart`
+
 停止holer：
 `service holer stop`
 
@@ -31,6 +34,8 @@
 **ARM Linux平台**执行如下命令：
 
 `sh /usr/bin/holer start`
+
+`sh /usr/bin/holer restart`
 
 `sh /usr/bin/holer stop`
 
