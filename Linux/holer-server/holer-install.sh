@@ -305,7 +305,7 @@ holer_option()
 
 holer_install()
 {
-    HOLER_LINE_NUM=314
+    HOLER_LINE_NUM=324
     tail -n +$HOLER_LINE_NUM $0 > $HOLER_PACK
 
     holer_option $INSTALL_OPTIONS
