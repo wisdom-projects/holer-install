@@ -76,17 +76,20 @@ holer_input()
     fi
 
     if [ -z "$HOLER_DBPASSWD" ]; then
+        echo ""
         echo "Enter database password, or press Enter for no password:"
         read HOLER_DBPASSWD
     fi
 
     if [ "$HOLER_DBUSER" != "" ]; then
+        echo ""
         echo "INFO: Ensure the database is accessible with the account '$HOLER_DBUSER/$HOLER_DBPASSWD'."
     fi
 
     if [ -z "$HOLER_NGINX_HOME" ]; then
         while :
         do
+            echo ""
             echo "Enter nginx home, or press Enter to use IP without nginx:"
             read HOLER_NGINX_HOME
             if [ -z "$HOLER_NGINX_HOME" ]; then
@@ -103,6 +106,7 @@ holer_input()
     fi
 
     if [ -z "$HOLER_DOMAIN" ]; then
+        echo ""
         echo "Enter domain name, or press Enter to use IP and port:"
         read HOLER_DOMAIN
         if [ "$HOLER_DOMAIN" != "" ]; then
@@ -114,6 +118,7 @@ holer_input()
     fi
 
     if [ -z "$HOLER_LICENSE" ]; then
+        echo ""
         echo "Enter license number, or press Enter to support one port mapping by default:"
         read HOLER_LICENSE
     fi
@@ -305,7 +310,7 @@ holer_option()
 
 holer_install()
 {
-    HOLER_LINE_NUM=324
+    HOLER_LINE_NUM=329
     tail -n +$HOLER_LINE_NUM $0 > $HOLER_PACK
 
     holer_option $INSTALL_OPTIONS
