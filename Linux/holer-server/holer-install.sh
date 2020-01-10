@@ -67,61 +67,49 @@ HOLER_SERVICE=$HOLER_NAME.service
 
 holer_input() 
 {
+    echo "Enter database user name, or press Enter to use root by default:"
+    read HOLER_DBUSER
     if [ -z "$HOLER_DBUSER" ]; then
-        echo "Enter database user name, or press Enter to use root by default:"
-        read HOLER_DBUSER
-        if [ -z "$HOLER_DBUSER" ]; then
-            HOLER_DBUSER="root"
+        HOLER_DBUSER="root"
+    fi
+
+    echo ""
+    echo "Enter database password, or press Enter for no password:"
+    read -s HOLER_DBPASSWD
+
+    echo ""
+    echo "INFO: Ensure the database is accessible with the account '$HOLER_DBUSER/$HOLER_DBPASSWD'."
+
+    while :
+    do
+        echo ""
+        echo "Enter nginx home, or press Enter to use IP for no nginx:"
+        read HOLER_NGINX_HOME
+        if [ -z "$HOLER_NGINX_HOME" ]; then
+            break
+        elif [ ! -d "$HOLER_NGINX_HOME" ]; then
+            echo "ERROR: The nginx home directory does not exist."
+        elif [ ! -f "$HOLER_NGINX_HOME/$HOLER_NGINX_CONF" ]; then
+            echo "ERROR: The 'nginx.conf' is missing from the '$HOLER_NGINX_HOME/$HOLER_NGINX_CONF_DIR' directory."
+            echo "Ensure the nginx home directory is correct and the 'nginx.conf' exists."
+        else
+            break
+        fi
+    done
+
+    echo ""
+    echo "Enter domain name, or press Enter to use IP and port instead of domain:"
+    read HOLER_DOMAIN
+    if [ "$HOLER_DOMAIN" != "" ]; then
+        ping -c 3 $HOLER_DOMAIN
+        if [ $? -ne 0 ]; then
+            echo "WARN: Ensure the domain resolution of '$HOLER_DOMAIN' is available."
         fi
     fi
 
-    if [ -z "$HOLER_DBPASSWD" ]; then
-        echo ""
-        echo "Enter database password, or press Enter for no password:"
-        read HOLER_DBPASSWD
-    fi
-
-    if [ "$HOLER_DBUSER" != "" ]; then
-        echo ""
-        echo "INFO: Ensure the database is accessible with the account '$HOLER_DBUSER/$HOLER_DBPASSWD'."
-    fi
-
-    if [ -z "$HOLER_NGINX_HOME" ]; then
-        while :
-        do
-            echo ""
-            echo "Enter nginx home, or press Enter to use IP without nginx:"
-            read HOLER_NGINX_HOME
-            if [ -z "$HOLER_NGINX_HOME" ]; then
-                break
-            elif [ ! -d "$HOLER_NGINX_HOME" ]; then
-                echo "ERROR: The nginx home directory does not exist."
-            elif [ ! -f "$HOLER_NGINX_HOME/$HOLER_NGINX_CONF" ]; then
-                echo "ERROR: The 'nginx.conf' is missing from the '$HOLER_NGINX_HOME/$HOLER_NGINX_CONF_DIR' directory."
-                echo "Ensure the nginx home directory is correct and the 'nginx.conf' exists."
-            else
-                break
-            fi
-        done
-    fi
-
-    if [ -z "$HOLER_DOMAIN" ]; then
-        echo ""
-        echo "Enter domain name, or press Enter to use IP and port:"
-        read HOLER_DOMAIN
-        if [ "$HOLER_DOMAIN" != "" ]; then
-            ping -c 3 $HOLER_DOMAIN
-            if [ $? -ne 0 ]; then
-                echo "WARN: Ensure the domain resolution of '$HOLER_DOMAIN' is available."
-            fi
-        fi
-    fi
-
-    if [ -z "$HOLER_LICENSE" ]; then
-        echo ""
-        echo "Enter license number, or press Enter to support one port mapping by default:"
-        read HOLER_LICENSE
-    fi
+    echo ""
+    echo "Enter license number, or press Enter to support one port mapping by default:"
+    read HOLER_LICENSE
 }
 
 holer_init()
@@ -240,11 +228,11 @@ holer_usage()
 cat << HOLER_USAGE
     *************************************************************
     Usage   : 
-    sh ${INSTALL_NAME} -u DB_USER -p DB_PASSWD \ \n
+    sh ${INSTALL_NAME} -u DB_USER -p DB_PASSWD \ 
        -n NGINX_HOME -d DOMAIN -l LICENSE
     -------------------------------------------------------------
     Example :
-    sh ${INSTALL_NAME} -u root -p 12345 -n /usr/local/nginx \ \n
+    sh ${INSTALL_NAME} -u root -p 12345 -n /usr/local/nginx \ 
        -d mydomain.com -l a0b1c2d3e4f5g6h7i8j9k
     *************************************************************
 HOLER_USAGE
@@ -254,6 +242,7 @@ HOLER_USAGE
 holer_option()
 {
     if [  $INSTALL_OPTION_NUM -lt 1 ]; then
+        holer_input
         return $HOLER_OK
     fi
 
@@ -310,11 +299,10 @@ holer_option()
 
 holer_install()
 {
-    HOLER_LINE_NUM=329
+    HOLER_LINE_NUM=317
     tail -n +$HOLER_LINE_NUM $0 > $HOLER_PACK
 
     holer_option $INSTALL_OPTIONS
-    holer_input
 
     echo "Installing holer..."
 
