@@ -95,5 +95,5 @@ Java版本的holer卸载脚本路径：
 
 用户也可以根据偏好选择安装Java版本的holer客户端 `holer-install.jre`；
 
-用户可以使用holer服务端安装包`holer-install.server`搭建自己的holer服务端。
+用户可以使用holer服务端安装包`holer-install.server`搭建自己的holer服务。
 
