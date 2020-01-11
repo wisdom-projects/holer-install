@@ -93,7 +93,7 @@ Java版本的holer卸载脚本路径：
 
 或者可以直接使用安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
 
-用户也可以根据偏好选择Java版本的安装包`holer-install.jre`，该安装包支持跨平台。
+用户也可以根据偏好选择安装Java版本的holer `holer-install.jre`；
 
-**Holer服务端软件**安装包`holer-install.server`，该安装包支持跨平台。
+Holer服务端软件安装包`holer-install.server`。
 
