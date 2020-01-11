@@ -91,9 +91,9 @@ Java版本的holer卸载脚本路径：
 ## 4. 注意事项
 目前holer的安装与卸载仅支持**Linux系统**，使用前执行命令`uname -m`查看硬件架构，选择跟自己硬件架构匹配的安装包。
 
-或者可以直接使用安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
+或者可以直接使用holer客户端安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
 
-用户也可以根据偏好选择安装Java版本的holer `holer-install.jre`；
+用户也可以根据偏好选择安装Java版本的holer客户端 `holer-install.jre`；
 
-Holer服务端软件安装包`holer-install.server`。
+用户可以使用holer服务端安装包`holer-install.server`搭建自己的holer服务端。
 
