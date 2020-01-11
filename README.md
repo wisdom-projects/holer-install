@@ -41,21 +41,11 @@ root
 
 Enter database password, or press Enter for no password:
 
-INFO: Ensure the database is accessible with the account 'root/123456'.
-
 Enter nginx home, or press Enter to use IP for no nginx:
 /usr/local/nginx
 
 Enter domain name, or press Enter to use IP and port instead of domain:
 holer.org
-PING holer.org (121.196.199.47) 56(84) bytes of data.
-64 bytes from 121.196.199.47: icmp_seq=1 ttl=55 time=8.29 ms
-64 bytes from 121.196.199.47: icmp_seq=2 ttl=55 time=8.25 ms
-64 bytes from 121.196.199.47: icmp_seq=3 ttl=55 time=8.20 ms
-
---- holer.org ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2001ms
-rtt min/avg/max/mdev = 8.202/8.247/8.290/0.082 ms
 
 Enter license number, or press Enter to support one port mapping by default:
 
