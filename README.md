@@ -13,10 +13,58 @@
 [地址二](https://pan.baidu.com/s/1APDAaaaQxTa71IR2hDjIaA#list/path=%2Fsharelink2808252679-1014620033513253%2Fholer%2Fholer-client%2Finstall&parentPath=%2Fsharelink2808252679-1014620033513253)
 
 ### 1.2 使用方法
-`sh holer-install.xxx -k HOLER_ACCESS_KEY -s HOLER_SERVER_HOST`
 
-### 1.3 使用示例
+#### 1.2.1 Holer客户端
+执行命令： `sh holer-install.xxx -k HOLER_ACCESS_KEY -s HOLER_SERVER_HOST`
+
+使用示例：
 `sh holer-install.x86 -k a0b1c2d3e4f5g6h7i8j9k -s holer.org`
+
+#### 1.2.2 Holer服务端
+执行命令：
+```
+sh holer-install.server -u DB_USER -p DB_PASSWD \
+   -n NGINX_HOME -d DOMAIN -l LICENSE
+```
+
+使用示例：
+```
+sh holer-install.server -u root -p 12345 -n /usr/local/nginx \
+   -d mydomain.com -l a0b1c2d3e4f5g6h7i8j9k
+```
+
+或者执行命令 `sh holer-install.server`，根据提示输入相应的参数。
+
+使用示例：
+```
+sh holer-install.server
+Enter database user name, or press Enter to use root by default:
+root
+
+Enter database password, or press Enter for no password:
+
+INFO: Ensure the database is accessible with the account 'root/123456'.
+
+Enter nginx home, or press Enter to use IP for no nginx:
+/usr/local/nginx
+
+Enter domain name, or press Enter to use IP and port instead of domain:
+holer.org
+PING holer.org (121.196.199.47) 56(84) bytes of data.
+64 bytes from 121.196.199.47: icmp_seq=1 ttl=55 time=8.29 ms
+64 bytes from 121.196.199.47: icmp_seq=2 ttl=55 time=8.25 ms
+64 bytes from 121.196.199.47: icmp_seq=3 ttl=55 time=8.20 ms
+
+--- holer.org ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 8.202/8.247/8.290/0.082 ms
+
+Enter license number, or press Enter to support one port mapping by default:
+
+Installing holer...
+Holer server PID <10635> is running.
+Done.
+```
 
 ## 2. 启停holer
 启动holer：
@@ -58,3 +106,6 @@ Java版本的holer卸载脚本路径：
 或者可以直接使用安装包`holer-install.bin`，该安装包支持所有主流的Linux硬件架构。
 
 用户也可以根据偏好选择Java版本的安装包`holer-install.jre`，该安装包支持跨平台。
+
+**Holer服务端软件**安装包`holer-install.server`，该安装包支持跨平台。
+
