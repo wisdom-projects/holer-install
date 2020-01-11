@@ -33,9 +33,7 @@ sh holer-install.server -u root -p 12345 -n /usr/local/nginx \
    -d mydomain.com -l a0b1c2d3e4f5g6h7i8j9k
 ```
 
-或者执行命令 `sh holer-install.server`，根据提示输入相应的参数。
-
-使用示例：
+或者执行命令 `sh holer-install.server`，根据提示输入相应的参数，使用示例：
 ```
 sh holer-install.server
 Enter database user name, or press Enter to use root by default:
